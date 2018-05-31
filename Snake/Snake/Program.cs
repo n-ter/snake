@@ -32,6 +32,8 @@ namespace Snake
             {
                 if(walls.IsHit(snake) || snake.IsHitTail())
                 {
+                    Console.WriteLine("Game Over");
+                    Console.ReadLine();
                     break;
                 }
 

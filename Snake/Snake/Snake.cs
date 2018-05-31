@@ -10,11 +10,11 @@ namespace Snake
     {
         Direction direction;
 
-        public Snake(Point tail, int lenght, Direction _direction)
+        public Snake(Point tail, int length, Direction _direction)
         {
             direction = _direction;
             pList = new List<Point>();
-            for (int i=0; i < lenght; i++)
+            for (int i=0; i < length; i++)
             {
                 Point p = new Point(tail);
                 p.Move(i, direction);
@@ -22,7 +22,7 @@ namespace Snake
             }
         }
 
-        internal void Move()
+        public void Move()
         {
             Point tail = pList.First();
             pList.Remove(tail);
@@ -64,7 +64,7 @@ namespace Snake
                 direction = Direction.UP;
         }
 
-        internal bool Eat(Point food)
+        public bool Eat(Point food)
         {
             Point head = GetNextPoint();
             if (head.IsHit(food))
